@@ -18,6 +18,7 @@ namespace RegisztraciosAlkalmazas
             InitializeComponent();
             saveFileDialog1.FileOk += (senderFile, eFile) =>
             {
+                List<string> hobbik = new List<string>();
                 try
                 {
                     string fileName = saveFileDialog1.FileName;
@@ -33,10 +34,17 @@ namespace RegisztraciosAlkalmazas
                         nem = radioNo.Text;
                     }
                     int hobbi = listBoxHobbik.SelectedIndex;
+                    foreach (var item in listBoxHobbik.Items)
+                    {
+                        hobbik.Add((string)item);
+                    }
                     using (var sw = new StreamWriter(fileName))
                     {
                         sw.WriteLine(nev + ";" + szulDatum + ";" + nem + ";" + hobbi);
-                        File.WriteAllLines(fileName, listBoxHobbik.Items.Cast<string>().ToArray());
+                        for (int i = 0; i < hobbik.Count; i++)
+                        {
+                            sw.WriteLine(hobbik[i]);
+                        }
                     }
                 }
                 catch (Exception)
@@ -51,7 +59,7 @@ namespace RegisztraciosAlkalmazas
                     string[] sorok = File.ReadAllLines(openFileDialog1.FileName);
                     string adatok = sorok[0];
                     string[] listboxAdatok = new string[sorok.Length-1];
-                    for (int i = 1; i < sorok.Length + 1; i++)
+                    for (int i = 1; i < sorok.Length; i++)
                     {
                         listboxAdatok[i - 1] = sorok[i];
                     }
@@ -67,9 +75,9 @@ namespace RegisztraciosAlkalmazas
                         radioNo.Checked = true;
                     }
                     int hobbi = Convert.ToInt32(adat[3]);
-                    foreach (var item in listboxAdatok)
+                    for (int i = 0; i < listboxAdatok.Length; i++)
                     {
-                        listBoxHobbik.Items.Add(item);
+                        listBoxHobbik.Items.Add(listboxAdatok[i]);
                     }
                     listBoxHobbik.SetSelected(hobbi, true);
                 }
