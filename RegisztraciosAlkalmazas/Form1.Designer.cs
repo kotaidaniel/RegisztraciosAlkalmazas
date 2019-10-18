@@ -31,7 +31,7 @@
             this.lblNev = new System.Windows.Forms.Label();
             this.lblSzul = new System.Windows.Forms.Label();
             this.lblNem = new System.Windows.Forms.Label();
-            this.txtboxName = new System.Windows.Forms.TextBox();
+            this.txtboxNev = new System.Windows.Forms.TextBox();
             this.txtboxSzul = new System.Windows.Forms.TextBox();
             this.txtboxHobbi = new System.Windows.Forms.TextBox();
             this.listBoxHobbik = new System.Windows.Forms.ListBox();
@@ -42,6 +42,8 @@
             this.btnHozzaad = new System.Windows.Forms.Button();
             this.btnBetolt = new System.Windows.Forms.Button();
             this.btnMentes = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // lblNev
@@ -74,12 +76,12 @@
             this.lblNem.TabIndex = 2;
             this.lblNem.Text = "Nem:";
             // 
-            // txtboxName
+            // txtboxNev
             // 
-            this.txtboxName.Location = new System.Drawing.Point(131, 13);
-            this.txtboxName.Name = "txtboxName";
-            this.txtboxName.Size = new System.Drawing.Size(140, 20);
-            this.txtboxName.TabIndex = 3;
+            this.txtboxNev.Location = new System.Drawing.Point(131, 13);
+            this.txtboxNev.Name = "txtboxNev";
+            this.txtboxNev.Size = new System.Drawing.Size(140, 20);
+            this.txtboxNev.TabIndex = 3;
             // 
             // txtboxSzul
             // 
@@ -157,11 +159,12 @@
             this.btnHozzaad.TabIndex = 13;
             this.btnHozzaad.Text = "Hozzáadás";
             this.btnHozzaad.UseVisualStyleBackColor = true;
+            this.btnHozzaad.Click += new System.EventHandler(this.btnHozzaad_Click);
             // 
             // btnBetolt
             // 
             this.btnBetolt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBetolt.Location = new System.Drawing.Point(113, 181);
+            this.btnBetolt.Location = new System.Drawing.Point(108, 168);
             this.btnBetolt.Name = "btnBetolt";
             this.btnBetolt.Size = new System.Drawing.Size(72, 23);
             this.btnBetolt.TabIndex = 14;
@@ -171,12 +174,22 @@
             // btnMentes
             // 
             this.btnMentes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnMentes.Location = new System.Drawing.Point(35, 181);
+            this.btnMentes.Location = new System.Drawing.Point(16, 168);
             this.btnMentes.Name = "btnMentes";
             this.btnMentes.Size = new System.Drawing.Size(72, 23);
             this.btnMentes.TabIndex = 15;
             this.btnMentes.Text = "Mentés";
             this.btnMentes.UseVisualStyleBackColor = true;
+            this.btnMentes.Click += new System.EventHandler(this.BtnMentes_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "txt";
+            this.saveFileDialog1.Filter = "Szöveges fájl|*.txt";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // RegisztraciosAlkalmazas
             // 
@@ -193,7 +206,7 @@
             this.Controls.Add(this.listBoxHobbik);
             this.Controls.Add(this.txtboxHobbi);
             this.Controls.Add(this.txtboxSzul);
-            this.Controls.Add(this.txtboxName);
+            this.Controls.Add(this.txtboxNev);
             this.Controls.Add(this.lblNem);
             this.Controls.Add(this.lblSzul);
             this.Controls.Add(this.lblNev);
@@ -209,7 +222,7 @@
         private System.Windows.Forms.Label lblNev;
         private System.Windows.Forms.Label lblSzul;
         private System.Windows.Forms.Label lblNem;
-        private System.Windows.Forms.TextBox txtboxName;
+        private System.Windows.Forms.TextBox txtboxNev;
         private System.Windows.Forms.TextBox txtboxSzul;
         private System.Windows.Forms.TextBox txtboxHobbi;
         private System.Windows.Forms.ListBox listBoxHobbik;
@@ -220,6 +233,8 @@
         private System.Windows.Forms.Button btnHozzaad;
         private System.Windows.Forms.Button btnBetolt;
         private System.Windows.Forms.Button btnMentes;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
