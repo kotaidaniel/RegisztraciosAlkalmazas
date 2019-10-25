@@ -34,7 +34,8 @@ namespace RegisztraciosAlkalmazas
                         nem = radioNo.Text;
                     }
                     int hobbi = listBoxHobbik.SelectedIndex;
-                    if (hobbi == -1) {
+                    if (hobbi == -1)
+                    {
                         hobbi = 0;
                     }
                     foreach (var item in listBoxHobbik.Items)
@@ -61,7 +62,7 @@ namespace RegisztraciosAlkalmazas
                 {
                     string[] sorok = File.ReadAllLines(openFileDialog1.FileName);
                     string adatok = sorok[0];
-                    string[] listboxAdatok = new string[sorok.Length-1];
+                    string[] listboxAdatok = new string[sorok.Length - 1];
                     for (int i = 1; i < sorok.Length; i++)
                     {
                         listboxAdatok[i - 1] = sorok[i];
@@ -93,8 +94,11 @@ namespace RegisztraciosAlkalmazas
 
         private void btnHozzaad_Click(object sender, EventArgs e)
         {
-            listBoxHobbik.Items.Add(txtboxHobbi.Text);
-            txtboxHobbi.Clear();
+            if (txtboxHobbi.Text != "")
+            {
+                listBoxHobbik.Items.Add(txtboxHobbi.Text);
+                txtboxHobbi.Clear();
+            }
         }
 
         private void BtnMentes_Click(object sender, EventArgs e)
@@ -109,10 +113,14 @@ namespace RegisztraciosAlkalmazas
 
         private void TxtboxHobbi_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (txtboxHobbi.Text != "")
             {
-                listBoxHobbik.Items.Add(txtboxHobbi.Text);
-                txtboxHobbi.Clear();
+                if (e.KeyCode == Keys.Enter)
+                {
+                    listBoxHobbik.Items.Add(txtboxHobbi.Text);
+                    txtboxHobbi.Clear();
+                }
+
             }
         }
     }
