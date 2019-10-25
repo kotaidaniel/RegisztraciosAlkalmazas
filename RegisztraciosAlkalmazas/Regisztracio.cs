@@ -34,6 +34,9 @@ namespace RegisztraciosAlkalmazas
                         nem = radioNo.Text;
                     }
                     int hobbi = listBoxHobbik.SelectedIndex;
+                    if (hobbi == -1) {
+                        hobbi = 0;
+                    }
                     foreach (var item in listBoxHobbik.Items)
                     {
                         hobbik.Add((string)item);
@@ -102,6 +105,15 @@ namespace RegisztraciosAlkalmazas
         private void BtnBetolt_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
+        }
+
+        private void TxtboxHobbi_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                listBoxHobbik.Items.Add(txtboxHobbi.Text);
+                txtboxHobbi.Clear();
+            }
         }
     }
 }

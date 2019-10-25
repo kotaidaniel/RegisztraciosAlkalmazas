@@ -96,6 +96,7 @@
             this.txtboxHobbi.Name = "txtboxHobbi";
             this.txtboxHobbi.Size = new System.Drawing.Size(135, 20);
             this.txtboxHobbi.TabIndex = 5;
+            this.txtboxHobbi.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TxtboxHobbi_KeyDown);
             // 
             // listBoxHobbik
             // 
@@ -196,6 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(455, 223);
             this.Controls.Add(this.btnMentes);
             this.Controls.Add(this.btnBetolt);
@@ -211,6 +213,7 @@
             this.Controls.Add(this.lblNem);
             this.Controls.Add(this.lblSzul);
             this.Controls.Add(this.lblNev);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "RegisztraciosAlkalmazas";
             this.Text = "Regisztráció";
             this.ResumeLayout(false);
