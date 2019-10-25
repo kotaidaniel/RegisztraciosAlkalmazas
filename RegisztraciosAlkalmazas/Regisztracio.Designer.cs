@@ -32,7 +32,6 @@
             this.lblSzul = new System.Windows.Forms.Label();
             this.lblNem = new System.Windows.Forms.Label();
             this.txtboxNev = new System.Windows.Forms.TextBox();
-            this.txtboxSzul = new System.Windows.Forms.TextBox();
             this.txtboxHobbi = new System.Windows.Forms.TextBox();
             this.listBoxHobbik = new System.Windows.Forms.ListBox();
             this.radioFerfi = new System.Windows.Forms.RadioButton();
@@ -44,6 +43,7 @@
             this.btnMentes = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtboxSzul = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblNev
@@ -83,13 +83,6 @@
             this.txtboxNev.Size = new System.Drawing.Size(140, 20);
             this.txtboxNev.TabIndex = 3;
             // 
-            // txtboxSzul
-            // 
-            this.txtboxSzul.Location = new System.Drawing.Point(131, 48);
-            this.txtboxSzul.Name = "txtboxSzul";
-            this.txtboxSzul.Size = new System.Drawing.Size(140, 20);
-            this.txtboxSzul.TabIndex = 4;
-            // 
             // txtboxHobbi
             // 
             this.txtboxHobbi.Location = new System.Drawing.Point(299, 155);
@@ -102,6 +95,10 @@
             // 
             this.listBoxHobbik.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxHobbik.FormattingEnabled = true;
+            this.listBoxHobbik.Items.AddRange(new object[] {
+            "Futball",
+            "Amerikai Futball",
+            "Videójátékok"});
             this.listBoxHobbik.Location = new System.Drawing.Point(299, 35);
             this.listBoxHobbik.Name = "listBoxHobbik";
             this.listBoxHobbik.Size = new System.Drawing.Size(135, 106);
@@ -193,12 +190,21 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // txtboxSzul
+            // 
+            this.txtboxSzul.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtboxSzul.Location = new System.Drawing.Point(131, 46);
+            this.txtboxSzul.Name = "txtboxSzul";
+            this.txtboxSzul.Size = new System.Drawing.Size(140, 20);
+            this.txtboxSzul.TabIndex = 16;
+            // 
             // RegisztraciosAlkalmazas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(455, 223);
+            this.Controls.Add(this.txtboxSzul);
             this.Controls.Add(this.btnMentes);
             this.Controls.Add(this.btnBetolt);
             this.Controls.Add(this.btnHozzaad);
@@ -208,7 +214,6 @@
             this.Controls.Add(this.radioFerfi);
             this.Controls.Add(this.listBoxHobbik);
             this.Controls.Add(this.txtboxHobbi);
-            this.Controls.Add(this.txtboxSzul);
             this.Controls.Add(this.txtboxNev);
             this.Controls.Add(this.lblNem);
             this.Controls.Add(this.lblSzul);
@@ -227,7 +232,6 @@
         private System.Windows.Forms.Label lblSzul;
         private System.Windows.Forms.Label lblNem;
         private System.Windows.Forms.TextBox txtboxNev;
-        private System.Windows.Forms.TextBox txtboxSzul;
         private System.Windows.Forms.TextBox txtboxHobbi;
         private System.Windows.Forms.ListBox listBoxHobbik;
         private System.Windows.Forms.RadioButton radioFerfi;
@@ -239,6 +243,7 @@
         private System.Windows.Forms.Button btnMentes;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DateTimePicker txtboxSzul;
     }
 }
 
